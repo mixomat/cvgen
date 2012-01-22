@@ -1,0 +1,37 @@
+<% @project.technologies.build %>
+<%= form_for(@project) do |project_form| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= project_form.label :title %><br />
+    <%= project_form.text_field :title %>
+  </div>
+  <div class="field">
+    <%= project_form.label :customer %><br />
+    <%= project_form.text_field :customer %>
+  </div>
+    <div class="field">
+    <%= project_form.label :role %><br />
+    <%= project_form.text_field :role %>
+  </div>
+  <div class="field">
+    <%= project_form.label :description %><br />
+    <%= project_form.text_area :description %>
+  </div>
+  <h3>Technologies</h3>
+  <%= render :partial => "technologies/fields", :locals => {:project_form => project_form} %>
+
+  <div class="actions">
+    <%= project_form.submit %>
+  </div>
+<% end %>
