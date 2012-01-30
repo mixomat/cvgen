@@ -1,15 +1,21 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.3'
-
-# Bundle edge Rails instead:
-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
-
 gem 'sqlite3'
-
 gem 'json'
-
 gem 'haml'
+
+# Gems used during testing
+group :test, :development do
+  gem 'rspec-rails'
+end
+
+group :cucumber do
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'cucumber-rails'
+  gem 'cucumber'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
