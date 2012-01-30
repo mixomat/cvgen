@@ -4,11 +4,24 @@
   <title>Cvgen</title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
+  <meta charset="utf-8">
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<div class="topbar">
+  <div class="fill">
+    <div class="container">
+      <a class="brand" href="/">CVgen</a>
+      <ul class="nav">
+        <li><%= link_to 'Projects', projects_path %></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+    <%= yield %>
+  </div>
+</div>
 </body>
 </html>

@@ -1,6 +1,8 @@
 <%= project_form.fields_for :technologies do |f| %>
-  <div class="field">
-    <%= f.label :name, 'Technology' %><br />
-    <%= f.text_field :name %>
-  </div>
+    <div class="clearfix">
+      <%= f.label :name, 'Technologies' %>
+      <div class="input">
+        <%= f.text_field :name, :rows => 8, :class => "xxlarge" %>
+      </div>
+    </div>
 <% end %>
