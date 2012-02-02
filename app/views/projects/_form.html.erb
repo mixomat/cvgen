@@ -1,9 +1,9 @@
 <% @project.technologies.build %>
 <%= form_for(@project) do |project_form| %>
     <% if @project.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
-
+        <div class="alert-message block-message error">
+          <p><strong>Oh snap! You got <%= pluralize(@project.errors.count, "error") %>!</strong> Change this and that
+            and <a href="#">try again</a>.</p>
           <ul>
             <% @project.errors.full_messages.each do |msg| %>
                 <li><%= msg %></li>
@@ -40,5 +40,6 @@
     </fieldset>
     <div class="actions">
       <%= project_form.submit :class => "btn primary" %>
+      <%= link_to 'Back', projects_path, :class => "btn" %>
     </div>
 <% end %>
