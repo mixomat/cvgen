@@ -1,29 +1,26 @@
-<h1>Listing projects</h1>
+<h2>Listing projects</h2>
 
-<table>
+<table class="table table-bordered">
+  <thead>
   <tr>
     <th>Title</th>
     <th>Role</th>
     <th>Customer</th>
     <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Actions</th>
   </tr>
+  </thead>
 
-<% @projects.each do |project| %>
-  <tr>
-    <td><%= project.title %></td>
-    <td><%= project.role %></td>
-    <td><%= project.customer %></td>
-    <td><%= project.description %></td>
-    <td><%= link_to 'Show', project %></td>
-    <td><%= link_to 'Edit', edit_project_path(project) %></td>
-    <td><%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+  <tbody>
+  <% @projects.each do |project| %>
+      <tr>
+        <td><%= project.title %></td>
+        <td><%= project.role %></td>
+        <td><%= project.customer %></td>
+        <td><%= project.description %></td>
+        <td><%= link_to 'Show', project %>&nbsp;<%= link_to 'Edit', edit_project_path(project) %>&nbsp;<%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+  <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Project', new_project_path %>
