@@ -8,7 +8,7 @@ Feature: Manage Projects
     When I add an invalid project
     Then I should see "Description can't be blank"
 
-   Scenario: Create a new project successfully
+  Scenario: Create a new project successfully
     Given I am on the new projects page
     When I add a new project successfully
     Then I should see "Project was successfully created"
