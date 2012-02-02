@@ -3,8 +3,12 @@ Feature: Manage Projects
   As a Developer
   I want to create, edit and list projects
 
-  Scenario: Projects List
-    Given I have projects titled Allianz, Payback
-    When I go to the list of projects
-    Then I should see Allianz
-    And I should see Payback
+  Scenario: Create a new project with errors
+    Given I am on the new projects page
+    When I add an invalid project
+    Then I should see "Description can't be blank"
+
+   Scenario: Create a new project successfully
+    Given I am on the new projects page
+    When I add a new project successfully
+    Then I should see "Project was successfully created"
