@@ -1,6 +1,7 @@
 <h2>Listing projects</h2>
 
 <table class="table table-bordered">
+  <thead>
   <tr>
     <th>Title</th>
     <th>Role</th>
@@ -8,15 +9,18 @@
     <th>Description</th>
     <th>Actions</th>
   </tr>
+  </thead>
 
-<% @projects.each do |project| %>
-  <tr>
-    <td><%= project.title %></td>
-    <td><%= project.role %></td>
-    <td><%= project.customer %></td>
-    <td><%= project.description %></td>
-    <td><%= link_to 'Show', project %>&nbsp;<%= link_to 'Edit', edit_project_path(project) %>&nbsp;<%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+  <tbody>
+  <% @projects.each do |project| %>
+      <tr>
+        <td><%= project.title %></td>
+        <td><%= project.role %></td>
+        <td><%= project.customer %></td>
+        <td><%= project.description %></td>
+        <td><%= link_to 'Show', project %>&nbsp;<%= link_to 'Edit', edit_project_path(project) %>&nbsp;<%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+  <% end %>
+  </tbody>
 </table>
 
