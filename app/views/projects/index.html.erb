@@ -1,14 +1,12 @@
 <h2>Listing projects</h2>
 
-<table>
+<table class="table table-bordered">
   <tr>
     <th>Title</th>
     <th>Role</th>
     <th>Customer</th>
     <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Actions</th>
   </tr>
 
 <% @projects.each do |project| %>
@@ -17,9 +15,7 @@
     <td><%= project.role %></td>
     <td><%= project.customer %></td>
     <td><%= project.description %></td>
-    <td><%= link_to 'Show', project %></td>
-    <td><%= link_to 'Edit', edit_project_path(project) %></td>
-    <td><%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', project %>&nbsp;<%= link_to 'Edit', edit_project_path(project) %>&nbsp;<%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

@@ -1,7 +1,7 @@
 <% @project.technologies.build %>
-<%= form_for(@project) do |project_form| %>
+<%= form_for(@project, :html => { :class => "form-horizontal" }) do |project_form| %>
     <% if @project.errors.any? %>
-        <div class="alert-message block-message error">
+        <div class="alert alert-block alert-error">
           <p><strong>Oh snap! You got <%= pluralize(@project.errors.count, "error") %>!</strong> Change this and that
             and <a href="#">try again</a>.</p>
           <ul>
@@ -12,34 +12,34 @@
         </div>
     <% end %>
     <fieldset>
-      <div class="clearfix">
-        <%= project_form.label :title %>
-        <div class="input">
-          <%= project_form.text_field :title, :class => "xlarge" %>
+      <div class="control-group">
+        <%= project_form.label :title, :class => "control-label" %>
+        <div class="controls">
+          <%= project_form.text_field :title, :class => "input-xlarge" %>
         </div>
       </div>
-      <div class="clearfix">
-        <%= project_form.label :customer %>
-        <div class="input">
-          <%= project_form.text_field :customer, :class => "xlarge" %>
+      <div class="control-group">
+        <%= project_form.label :customer, :class => "control-label" %>
+        <div class="controls">
+          <%= project_form.text_field :customer, :class => "input-xlarge" %>
         </div>
       </div>
-      <div class="clearfix">
-        <%= project_form.label :role %>
-        <div class="input">
-          <%= project_form.text_field :role, :class => "xlarge" %>
+      <div class="control-group">
+        <%= project_form.label :role, :class => "control-label" %>
+        <div class="controls">
+          <%= project_form.text_field :role, :class => "input-xlarge" %>
         </div>
       </div>
-      <div class="clearfix">
-        <%= project_form.label :description %>
-        <div class="input">
-          <%= project_form.text_area :description, :rows => 8, :class => "xxlarge" %>
+      <div class="control-group">
+        <%= project_form.label :description, :class => "control-label" %>
+        <div class="controls">
+          <%= project_form.text_area :description, :rows => 8, :class => "input-xxlarge" %>
         </div>
       </div>
       <%= render :partial => "technologies/fields", :locals => {:project_form => project_form} %>
     </fieldset>
-    <div class="actions">
-      <%= project_form.submit :class => "btn primary" %>
-      <%= link_to 'Back', projects_path, :class => "btn" %>
+    <div class="form-actions">
+      <%= project_form.submit :class => "btn btn-primary" %>
+      <button type="reset" class="btn">Cancel</button>
     </div>
 <% end %>
