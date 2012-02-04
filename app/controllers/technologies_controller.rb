@@ -1,12 +1,12 @@
 class TechnologiesController < ApplicationController
-  # GET /projects
-  # GET /projects.json
+  # GET /technologies
+  # GET /technologies.json
   def index
-    @projects = Technology.all
+    @technologies = Technology.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render :json => @projects }
+      format.json { render :json => @technologies }
     end
   end
 
