@@ -2,7 +2,7 @@
     <div class="control-group">
       <%= f.label :name, 'Technologies', :class => "control-label" %>
       <div class="controls">
-        <%= f.text_field :name, :rows => 8, :class => "input-xxlarge" %>
+        <%= f.text_field :name, :rows => 8, :class => "input-xxlarge", :data => { :provide => "typeahead", :items => 2, :source => ["Java", "Ruby"] } %>
       </div>
     </div>
 <% end %>
