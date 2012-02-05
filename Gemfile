@@ -4,6 +4,7 @@ gem 'rails', '3.1.3'
 gem 'sqlite3'
 gem 'json'
 gem 'haml'
+gem 'simple_form', '2.0.0.rc'
 
 # Gems used during testing
 group :test, :development do
