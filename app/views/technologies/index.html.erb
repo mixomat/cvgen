@@ -1,0 +1,16 @@
+<h2>Listing technologies</h2>
+
+<p id="notice"><%= notice %></p>
+
+<%= simple_form_for(@technology, :html => {:class => "form-horizontal", :data => {:remote => "true"}}) do |f| %>
+    <%= f.input :name %>
+    <div class="form-actions">
+      <%= f.button :submit, :class => 'btn-primary'  %>
+    </div>
+<% end %>
+
+<ul id="technologies">
+  <% @technologies.each do |technology| %>
+      <li><%= technology.name %></li>
+  <% end %>
+</ul>

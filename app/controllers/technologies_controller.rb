@@ -1,13 +1,18 @@
 class TechnologiesController < ApplicationController
-  # GET /technologies
-  # GET /technologies.json
+  respond_to :html, :json, :js
+
   def index
+    @technology = Technology.new
     @technologies = Technology.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render :json => @technologies }
-    end
+    respond_with @technologies
+  end
+
+  def create
+    @technology = Technology.new(params[:technology])
+    flash[:notice] = 'Technology was successfully created.' if @technology.save
+
+    respond_with @technology, :location => technologies_url
   end
 
 end
