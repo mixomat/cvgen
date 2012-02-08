@@ -6,7 +6,7 @@ Feature: Manage Projects
   Scenario: Create a new project with errors
     Given I am on the new projects page
     When I add an invalid project
-    Then I should see "Description can't be blank"
+    Then I should see "Oh snap! You got 4 errors! Change this and that"
 
   Scenario: Create a new project successfully
     Given I am on the new projects page

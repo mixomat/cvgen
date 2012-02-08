@@ -1,4 +1,5 @@
 Given /^I am on the new projects page$/ do
+  Technology.new(:name => "Java").save
   visit "/projects/new"
 end
 
@@ -7,7 +8,7 @@ When /^I add a new project successfully$/ do
   fill_in "Description", :with => "lorem ipsum"
   fill_in "Role", :with => "Software Engineer"
   fill_in "Customer", :with => "Allianz AG"
-  fill_in "Technologies", :with => "Java"
+  select "Java", :from => "Technologies"
   click_button "Create Project"
 end
 
