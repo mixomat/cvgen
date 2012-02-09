@@ -15,4 +15,10 @@ class TechnologiesController < ApplicationController
     respond_with @technology, :location => technologies_url
   end
 
+
+  def names
+    @technologies = Technology.select(:name).map { |t| t.name}
+
+    respond_with @technologies
+  end
 end
