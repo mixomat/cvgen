@@ -8,7 +8,7 @@ When /^I add a new project/ do
   fill_in "Description", :with => "lorem ipsum"
   fill_in "Role", :with => "Software Engineer"
   fill_in "Customer", :with => "Allianz AG"
-  fill_in "Technologies", :with => "Java"
+  select "Java", :from => "Technologies"
   click_button "Create Project"
 end
 
