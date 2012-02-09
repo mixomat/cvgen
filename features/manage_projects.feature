@@ -10,5 +10,5 @@ Feature: Manage Projects
 
   Scenario: Create a new project successfully
     Given I am on the new projects page
-    When I add a new project successfully
+    When I add a new project
     Then I should see "Project was successfully created"
