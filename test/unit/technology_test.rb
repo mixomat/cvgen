@@ -8,8 +8,18 @@ class TechnologyTest < ActiveSupport::TestCase
   end
 
   test "should save with name" do
-    technology = Technology.new(:name => "HTML5")
+    technology = test_technology("HTML5")
     assert technology.save
   end
-  
+
+  test "should have unique name" do
+    test_technology("CSS3").save
+
+    assert !test_technology("CSS3").save
+  end
+
+  def test_technology(name)
+    Technology.new(:name => name)
+  end
+
 end
