@@ -16,14 +16,6 @@ class ProjectsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create project" do
-    assert_difference('Project.count') do
-      post :create, :project => @project.attributes
-    end
-
-    assert_redirected_to project_path(assigns(:project))
-  end
-
   test "should show project" do
     get :show, :id => @project.to_param
     assert_response :success

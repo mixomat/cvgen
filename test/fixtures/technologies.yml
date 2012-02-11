@@ -1,7 +1,5 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
+java:
   name: Java
 
-two:
+ruby:
   name: Ruby
