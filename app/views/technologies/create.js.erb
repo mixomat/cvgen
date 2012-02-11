@@ -1,2 +1,14 @@
-$('#new_technology').find('input:text,textarea').val('');
-$('#technologies').append('<li><%= @technology.name %></li>');
+<% if @technology.errors.any? %>
+    var errors = "";
+
+    <% @technology.errors.full_messages.each do |error| %>
+        errors +='<%= escape_javascript(error) %><br/>';
+    <% end %>
+
+    $('#notice').removeClass().addClass('alert alert-error').html(errors);
+<% else %>
+    $('#notice').removeClass().addClass('alert').html('<%= notice %>');
+
+    $('#new_technology').find('input:text,textarea').val('');
+    $('#technologies').append('<li><%= @technology.name %></li>');
+<% end %>
