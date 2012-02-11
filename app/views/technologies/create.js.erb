@@ -7,7 +7,7 @@
 
     $('#notice').removeClass().addClass('alert alert-error').html(errors);
 <% else %>
-    $('#notice').removeClass().addClass('alert').html('<%= notice %>');
+    $('#notice').removeClass().addClass('alert alert-success').html('<%= notice %>');
 
     $('#new_technology').find('input:text,textarea').val('');
     $('#technologies').append('<li><%= @technology.name %></li>');
