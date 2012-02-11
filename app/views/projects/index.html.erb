@@ -18,7 +18,14 @@
         <td><%= project.role %></td>
         <td><%= project.customer %></td>
         <td><%= project.description %></td>
-        <td><%= link_to 'Show', project %>&nbsp;<%= link_to 'Edit', edit_project_path(project) %>&nbsp;<%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %></td>
+        <td>
+          <%= link_to edit_project_path(project) do %>
+              <i class="icon-edit"></i>
+          <% end %>
+          <%= link_to(project, :confirm => 'Are you sure?', :method => :delete) do %>
+              <i class="icon-remove"></i>
+          <% end %>
+        </td>
       </tr>
   <% end %>
   </tbody>
