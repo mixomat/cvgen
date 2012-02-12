@@ -1,4 +1,4 @@
-<%= simple_form_for(@project, :html => {:class => "form-horizontal"}) do |f| %>
+<%= simple_form_for @project, :html => {:class => "well form-inline"} do |f| %>
     <% if @project.errors.any? %>
         <div class="alert alert-block alert-error">
           <p><strong>Oh snap! You got <%= pluralize(@project.errors.count, "error") %>!</strong> Change this and that
@@ -13,8 +13,6 @@
 
     <%= f.association :technologies, :input_html => {:class => "input-xxlarge", :data => {:placeholder => "Add some technologies"} } %>
 
-    <div class="form-actions">
-      <%= f.button :submit, :class => 'btn-primary' %>
-      <%= submit_tag 'Cancel', :type => :reset, :class => "btn" %>
-    </div>
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= submit_tag 'Cancel', :type => :reset, :class => "btn" %>
 <% end %>

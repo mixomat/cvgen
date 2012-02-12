@@ -1,7 +1,11 @@
-<h2>Technologies</h2>
+<div class="page-header">
+  <h2>Technologies
+    <small>List and add technologies to your projects</small>
+  </h2>
+</div>
 
-<div id="notice"></div>
 <%= simple_form_for(@technology, :html => {:class => "well form-search", :data => {:remote => "true"}}) do |f| %>
+    <div id="notice"></div>
     <%= f.input :name, :label => false %>
     <%= f.button :submit, :class => 'btn' %>
 <% end %>
