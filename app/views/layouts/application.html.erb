@@ -20,23 +20,21 @@
   </div>
 </div>
 <div class="container">
-  <div class="content">
-    <div class="row">
-        <div class="span2">
-            <div class="well sidebar-nav">
-              <ul class="nav nav-list">
-                <li class="nav-header">Projects</li>
-                <li><%= link_to 'New Project', new_project_path %></li>
-                <li><%= link_to 'List Projects', projects_path %></li>
-                <li class="nav-header">Technologies</li>
-                <li><%= link_to 'Technologies', technologies_path %></li>
-              </ul>
-            </div>
-        </div>
-        <diV class="span9">
-          <%= yield %>
-        </diV>
+  <div class="row">
+    <div class="span2">
+      <div class="well sidebar-nav">
+        <ul class="nav nav-list">
+          <li class="nav-header">Projects</li>
+          <li><%= link_to 'New Project', new_project_path %></li>
+          <li><%= link_to 'List Projects', projects_path %></li>
+          <li class="nav-header">Technologies</li>
+          <li><%= link_to 'Technologies', technologies_path %></li>
+        </ul>
+      </div>
     </div>
+    <diV class="span10">
+      <%= yield %>
+    </diV>
   </div>
 </div>
 </body>

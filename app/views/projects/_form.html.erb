@@ -1,4 +1,4 @@
-<%= simple_form_for @project do |f| %>
+<%= simple_form_for @project, :html => {:class => "form-horizontal"} do |f| %>
     <% if @project.errors.any? %>
         <div class="alert alert-block alert-error">
           <p><strong>Oh snap! You got <%= pluralize(@project.errors.count, "error") %>!</strong> Change this and that
@@ -11,8 +11,10 @@
     <%= f.input :role, :input_html => {:class => "input-xlarge"} %>
     <%= f.input :description, :input_html => {:class => "input-xxlarge", :rows => 8} %>
 
-    <%= f.association :technologies, :input_html => {:class => "input-xlarge", :data => {:placeholder => "Add some technologies"} } %>
+    <%= f.association :technologies, :input_html => {:class => "input-xlarge", :data => {:placeholder => "Add some technologies"}} %>
 
-    <%= f.button :submit, :class => 'btn-primary' %>
-    <%= submit_tag 'Cancel', :type => :reset, :class => "btn" %>
+    <div class="button-row">
+      <%= f.button :submit, :class => 'btn' %>
+      <%= submit_tag 'Cancel', :type => :reset, :class => "btn" %>
+    </div>
 <% end %>
