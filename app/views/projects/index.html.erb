@@ -19,12 +19,8 @@
         <td><%= project.customer %></td>
         <td><%= project.description %></td>
         <td>
-          <%= link_to edit_project_path(project) do %>
-              <i class="icon-edit"></i>
-          <% end %>
-          <%= link_to(project, :confirm => 'Are you sure?', :method => :delete) do %>
-              <i class="icon-remove"></i>
-          <% end %>
+          <%= icon_link_to "icon-edit", edit_project_path(project) %>
+          <%= icon_link_to "icon-remove", project, :confirm => 'Are you sure?', :method => :delete %>
         </td>
       </tr>
   <% end %>
