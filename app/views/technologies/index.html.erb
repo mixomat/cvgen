@@ -4,7 +4,7 @@
   </h2>
 </div>
 
-<%= simple_form_for(@technology, :html => {:class => "well form-search", :data => {:remote => "true"}}) do |f| %>
+<%= simple_form_for(@technology, :html => {:data => {:remote => "true"}}) do |f| %>
     <div id="notice"></div>
     <%= f.input :name, :label => false %>
     <%= f.button :submit, :class => 'btn' %>
