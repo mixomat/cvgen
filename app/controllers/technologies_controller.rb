@@ -15,6 +15,12 @@ class TechnologiesController < ApplicationController
     respond_with @technology, :location => technologies_url
   end
 
+  def destroy
+    @technology = Technology.find(params[:id])
+    @technology.destroy
+
+    respond_with @technology
+  end
 
   def names
     @technologies = Technology.select(:name).map { |t| t.name}

@@ -7,6 +7,6 @@
 <% end %>
 <ul id="technologies">
   <% @technologies.each do |technology| %>
-      <li><%= technology.name %></li>
+      <li><%= technology.name %><%= icon_link_to "icon-remove", technology, :confirm => 'Are you sure?', :method => :delete, :class => "hidden", :data => {:show => "hover"} %></li>
   <% end %>
 </ul>
