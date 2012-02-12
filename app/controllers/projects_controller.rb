@@ -25,14 +25,14 @@ class ProjectsController < ApplicationController
     @project = Project.new(params[:project])
     flash[:notice] = "Project was succesfully created." if @project.save
 
-    respond_with @project
+    respond_with @project, :location => projects_path
   end
 
   def update
     @project = Project.find(params[:id])
     flash[:notice] = "Project was successfully updated." if @project.update_attributes(params[:project])
 
-    respond_with @project
+    respond_with @project, :location => projects_path
   end
 
   def destroy

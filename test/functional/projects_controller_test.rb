@@ -28,7 +28,12 @@ class ProjectsControllerTest < ActionController::TestCase
 
   test "should update project" do
     put :update, :id => @project.to_param, :project => @project.attributes
-    assert_redirected_to project_path(assigns(:project))
+    assert_redirected_to projects_path
+  end
+
+  test "should create project" do
+    post :create, :project => @project.attributes
+    assert_response :success
   end
 
   test "should destroy project" do
