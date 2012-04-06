@@ -1,9 +1,11 @@
-<div class="well sidebar-nav">
-  <ul class="nav nav-list">
-    <li class="nav-header">Projects</li>
-    <li><%= link_to 'New Project', new_project_path %></li>
-    <li><%= link_to 'List Projects', projects_path %></li>
-    <li class="nav-header">Technologies</li>
-    <li><%= link_to 'Technologies', technologies_path %></li>
-  </ul>
-</div>
+<% if signed_in? %>
+    <div class="well sidebar-nav">
+      <ul class="nav nav-list">
+        <li class="nav-header">Projects</li>
+        <li><%= link_to 'New Project', new_project_path %></li>
+        <li><%= link_to 'List Projects', projects_path %></li>
+        <li class="nav-header">Technologies</li>
+        <li><%= link_to 'Technologies', technologies_path %></li>
+      </ul>
+    </div>
+<% end %>
