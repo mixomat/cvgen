@@ -1,4 +1,5 @@
 Cvgen::Application.routes.draw do
+  resources :users
   resources :projects
 
   resources :technologies do
