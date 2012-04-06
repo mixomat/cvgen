@@ -7,14 +7,14 @@ describe "Projects" do
   describe "list" do
     before { visit projects_path }
 
-    it { should have_selector('h2', :text => "List Projects") }
-    it { should have_selector('title', :text => "Projects") }
+    it { should have_selector('h2', text: "List Projects") }
+    it { should have_selector('title', text: "Projects") }
     it { should have_table('project-table') }
   end
 
   describe "create" do
     let(:java) { FactoryGirl.create(:technology) }
-    let(:ruby) { FactoryGirl.create(:technology, name => "Ruby") }
+    let(:ruby) { FactoryGirl.create(:technology, name: "Ruby") }
 
     before { visit new_project_path }
 
