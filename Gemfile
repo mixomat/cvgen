@@ -1,42 +1,33 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.3'
-gem 'sqlite3'
-gem 'json'
-gem 'haml'
+gem 'rails', '3.2.1'
+gem 'jquery-rails'
+gem 'bcrypt-ruby', '3.0.1'
 gem 'simple_form', '2.0.0.rc'
 
-# Gems used during testing
-group :test, :development do
-  gem 'rspec-rails'
+# check if needed
+gem 'json'
+
+group :development, :test do
+  gem 'sqlite3', '1.3.5'
+  gem 'rspec-rails', '2.8.1'
+#  gem 'database_cleaner
 end
 
-group :cucumber do
-  gem 'capybara'
-  gem 'database_cleaner'
-  gem 'cucumber-rails'
-  gem 'cucumber'
+group :test do
+  gem 'factory_girl_rails', '1.4.0'
+  gem 'capybara', '1.1.2'
 end
 
+group :production do
+  gem 'pg', '0.12.2'
+end
+3
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.1.5'
-  gem 'coffee-rails', '~> 3.1.1'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails', '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'uglifier', '>= 1.2.3'
 end
-
-gem 'jquery-rails'
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug'
 
