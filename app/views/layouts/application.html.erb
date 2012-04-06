@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Cvgen</title>
+  <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag "application" %>
   <%= render 'layouts/shim' %>

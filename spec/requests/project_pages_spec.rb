@@ -8,6 +8,7 @@ describe "Projects" do
     before { visit projects_path }
 
     it { should have_selector('h2', :text => "List Projects") }
+    it { should have_selector('title', :text => "Projects") }
     it { should have_table('project-table') }
   end
 
