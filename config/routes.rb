@@ -1,7 +1,12 @@
 Cvgen::Application.routes.draw do
-  resources :users
-  resources :projects
 
+  resources :users, only: [:show]
+  resources :sessions, only: [:new, :create, :destroy]
+
+  match '/login',  to: 'sessions#new'
+  match '/logout', to: 'sessions#destroy', via: :delete
+
+  resources :projects
   resources :technologies do
     collection do
       get 'names'

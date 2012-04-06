@@ -12,11 +12,17 @@
 <%= render 'layouts/navbar' %>
 <div class="container">
   <div class="row">
-    <%= render 'layouts/sidebar' %>
+    <div class="span2">
+      <%= render 'layouts/sidebar' %>
+    </div>
     <div class="span10">
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
       <%= yield %>
     </div>
   </div>
+  <%= debug(params) if Rails.env.development? %>
 </div>
 </body>
 </html>
