@@ -4,37 +4,18 @@
   <title>Cvgen</title>
   <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag "application" %>
+  <%= render 'layouts/shim' %>
   <meta charset="utf-8">
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container">
-      <a class="brand" href="/">CVgen</a>
-      <ul class="nav">
-        <li><%= link_to 'Projects', projects_path %></li>
-        <li><%= link_to 'Technologies', technologies_path %></li>
-      </ul>
-    </div>
-  </div>
-</div>
+<%= render 'layouts/navbar' %>
 <div class="container">
   <div class="row">
-    <div class="span2">
-      <div class="well sidebar-nav">
-        <ul class="nav nav-list">
-          <li class="nav-header">Projects</li>
-          <li><%= link_to 'New Project', new_project_path %></li>
-          <li><%= link_to 'List Projects', projects_path %></li>
-          <li class="nav-header">Technologies</li>
-          <li><%= link_to 'Technologies', technologies_path %></li>
-        </ul>
-      </div>
-    </div>
-    <diV class="span10">
+    <%= render 'layouts/sidebar' %>
+    <div class="span10">
       <%= yield %>
-    </diV>
+    </div>
   </div>
 </div>
 </body>
