@@ -7,8 +7,8 @@ describe "Projects" do
   describe "list" do
     before { visit projects_path }
 
-    it { should have_selector('h2', text: "List Projects") }
     it { should have_selector('title', text: "Projects") }
+    it { should have_selector('h2', text: "List Projects") }
     it { should have_table('project-table') }
   end
 
@@ -26,17 +26,16 @@ describe "Projects" do
       end
     end
 
-    describe "with valid information" do
+    describe "with almost valid information" do
       before do
         fill_in "Title", :with => "Project Title"
         fill_in "Description", :with => "lorem ipsum"
         fill_in "Role", :with => "Software Engineer"
         fill_in "Customer", :with => "Allianz AG"
-        select "Java", :from => "Technologies"
       end
 
-      it "should create a new project" do
-        expect { click_button "Create Project" }.to change(Project, :count)
+      it "should not create a new project" do
+        expect { click_button "Create Project" }.not_to change(Project, :count)
       end
     end
   end

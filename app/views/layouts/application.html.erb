@@ -16,6 +16,11 @@
       <%= render 'layouts/sidebar' %>
     </div>
     <div class="span10">
+      <div class="page-header">
+        <h2><%= yield(:title) %>
+          <small><%= yield(:subtitle) %></small>
+        </h2>
+      </div>
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>
