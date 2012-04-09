@@ -1,9 +1,5 @@
 <% provide :title, "Technologies" %>
-<div class="page-header">
-  <h2>Technologies
-    <small>List and add technologies to your projects</small>
-  </h2>
-</div>
+<% provide :subtitle, "List and add technologies to your projects" %>
 
 <%= simple_form_for(@technology, :html => {:data => {:remote => "true"}}) do |f| %>
     <div id="notice"></div>
