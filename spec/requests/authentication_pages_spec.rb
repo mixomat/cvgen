@@ -41,7 +41,38 @@ describe "Authentication" do
         before { click_link "Logout" }
         it { should have_selector('h2', text: 'Login') }
       end
+    end
+  end
 
+  describe "Authorization" do
+    describe "for non-signed-in users" do
+      let(:user) { FactoryGirl.create(:user) }
+
+      describe "in the Projects controller" do
+
+        describe "visiting the new project page" do
+          before { visit new_project_path }
+          it { should have_selector('h2', text: 'Login') }
+        end
+
+        describe "submitting to the create action" do
+          before { post projects_path }
+          specify { response.should redirect_to(login_path) }
+        end
+      end
+
+      describe "in the Technologies controller" do
+        describe "visiting the technologies page" do
+          before { visit technologies_path }
+          it { should have_selector('h2', text: 'Login') }
+        end
+
+        describe "submitting to the create action" do
+          before { post technologies_path }
+          specify { response.should redirect_to(login_path) }
+        end
+
+      end
     end
   end
 end

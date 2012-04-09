@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   respond_to :html, :json
+  before_filter :signed_in_user
 
   def index
     @projects = Project.all
@@ -41,4 +42,6 @@ class ProjectsController < ApplicationController
 
     respond_with @project
   end
+
+
 end

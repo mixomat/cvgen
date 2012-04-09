@@ -1,7 +1,7 @@
 Cvgen::Application.routes.draw do
 
   scope "/admin" do
-    root :to => 'sessions#new'
+    root :to => 'projects#new'
 
     resources :users, only: [:show]
     resources :sessions, only: [:new, :create, :destroy]

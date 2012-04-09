@@ -1,15 +1,18 @@
 <% provide(:title, "Login") %>
 <% provide(:subtitle, "Please sign in to access the admin area.") %>
-<%= form_for(:session, :url => sessions_path) do |f| %>
+<div class="row">
+  <div class="span6">
+    <%= form_for(:session, :url => sessions_path) do |f| %>
 
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+        <%= f.label :email %>
+        <%= f.text_field :email, :class => "span6" %>
 
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+        <%= f.label :password %>
+        <%= f.password_field :password, :class => "span6" %>
 
-    <div class="button-row">
-      <%= f.submit "Sign in", :class => "btn btn-large btn-primary" %>
-    </div>
-
-<% end %>
+        <div style="text-align: center">
+          <%= f.submit "Sign in", :class => "btn btn-large btn-primary" %>
+        </div>
+    <% end %>
+  </div>
+</div>

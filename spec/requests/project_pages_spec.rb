@@ -4,6 +4,9 @@ describe "Projects" do
 
   subject { page }
 
+  let(:user) { FactoryGirl.create(:user) }
+  before { sign_in user }
+
   describe "list" do
     before { visit projects_path }
 
