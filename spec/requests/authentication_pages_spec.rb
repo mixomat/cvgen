@@ -13,13 +13,13 @@ describe "Authentication" do
     it { should_not have_link('New Project', href: new_project_path) }
 
     describe "with invalid information" do
-      before { click_button :signin}
+      before { click_button :signin }
 
       it { should have_selector('title', text: 'Login') }
       it { should have_selector('div.alert.alert-error', text: 'Invalid') }
 
       describe "after visiting another page" do
-        before { click_link "CVgen" }
+        before { visit login_path }
         it { should_not have_selector('div.alert.alert-error') }
       end
     end
@@ -39,7 +39,7 @@ describe "Authentication" do
 
       describe "followed by logout" do
         before { click_link "Logout" }
-        it { should have_link(:signin) }
+        it { should have_selector('h2', text: 'Login') }
       end
 
     end

@@ -1,18 +1,22 @@
 Cvgen::Application.routes.draw do
-  root :to => 'sessions#new'
 
-  resources :users, only: [:show]
-  resources :sessions, only: [:new, :create, :destroy]
+  scope "/admin" do
+    root :to => 'sessions#new'
 
-  match '/login',  to: 'sessions#new'
-  match '/logout', to: 'sessions#destroy', via: :delete
+    resources :users, only: [:show]
+    resources :sessions, only: [:new, :create, :destroy]
 
-  resources :projects
-  resources :technologies do
-    collection do
-      get 'names'
+    match '/login', to: 'sessions#new'
+    match '/logout', to: 'sessions#destroy', via: :delete
+
+    resources :projects
+    resources :technologies do
+      collection do
+        get 'names'
+      end
     end
   end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
