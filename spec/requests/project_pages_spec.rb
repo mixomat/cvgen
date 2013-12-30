@@ -38,8 +38,8 @@ describe "Projects" do
         fill_in "Description", :with => "lorem ipsum"
         fill_in "Role", :with => "Software Engineer"
         fill_in "Customer", :with => "Allianz AG"
-        select "2012", :from => "Start date"
-        select "2012", :from => "End date"
+        select Date.today.year.to_s, :from => "Start date"
+        select Date.today.year.to_s, :from => "End date"
       end
 
       it "should not create a new project" do
