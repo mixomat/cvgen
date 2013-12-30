@@ -9,10 +9,12 @@
 #  description :text
 #  created_at  :datetime
 #  updated_at  :datetime
+#  start_date  :date
+#  end_date    :date
 #
 
 class Project < ActiveRecord::Base
-  validates :title, :description, :customer, :role, :technologies, :presence => true
+  validates :title, :description, :customer, :role, :technologies, :start_date, :end_date, :presence => true
   
   has_and_belongs_to_many :technologies
   accepts_nested_attributes_for :technologies

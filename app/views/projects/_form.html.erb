@@ -6,6 +6,13 @@
         </div>
     <% end %>
 
+    <%= f.input :start_date, :as => :date,
+                :start_year => Date.today.year, :discard_day => true, :order => [:month, :year],
+                :input_html => {:class => "input-small"} %>
+    <%= f.input :end_date, :as => :date,
+                :start_year => Date.today.year, :start_month => 2.months.ago, :discard_day => true, :order => [:month, :year],
+                :input_html => {:class => "input-small"} %>
+
     <%= f.input :title, :input_html => {:class => "input-xlarge"} %>
     <%= f.input :customer, :input_html => {:class => "input-xlarge"} %>
     <%= f.input :role, :input_html => {:class => "input-xlarge"} %>

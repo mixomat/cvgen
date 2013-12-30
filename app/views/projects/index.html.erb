@@ -5,8 +5,10 @@
   <thead>
   <tr>
     <th>Title</th>
-    <th>Role</th>
     <th>Customer</th>
+    <th>Role</th>
+    <th>Start</th>
+    <th>End</th>
     <th>Description</th>
     <th>Actions</th>
   </tr>
@@ -16,8 +18,10 @@
   <% @projects.each do |project| %>
       <tr>
         <td><%= project.title %></td>
-        <td><%= project.role %></td>
         <td><%= project.customer %></td>
+        <td><%= project.role %></td>
+        <td><%= project.start_date %></td>
+        <td><%= project.end_date %></td>
         <td><%= project.description %></td>
         <td>
           <%= icon_link_to "icon-edit", edit_project_path(project) %>

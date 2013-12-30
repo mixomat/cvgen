@@ -12,7 +12,10 @@ describe "Projects" do
 
     it { should have_selector('title', text: "Projects") }
     it { should have_selector('h2', text: "List Projects") }
-    it { should have_table('project-table') }
+    it { should have_table("project-table") }
+    it { should have_selector('th', text: "Title") }
+    it { should have_selector('th', text: "Start") }
+    it { should have_selector('th', text: "End") }
   end
 
   describe "create" do
@@ -35,6 +38,8 @@ describe "Projects" do
         fill_in "Description", :with => "lorem ipsum"
         fill_in "Role", :with => "Software Engineer"
         fill_in "Customer", :with => "Allianz AG"
+        select "2012", :from => "Start date"
+        select "2012", :from => "End date"
       end
 
       it "should not create a new project" do
