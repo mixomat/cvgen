@@ -6,3 +6,7 @@ def sign_in(user)
   # Sign in when not using Capybara as well.
   cookies[:remember_token] = user.remember_token
 end
+
+def json
+  @json ||= JSON.parse(response.body)
+end

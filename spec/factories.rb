@@ -3,6 +3,15 @@ FactoryGirl.define do
     name "Java"
   end
 
+  factory :project do
+    title "Web Development"
+    role "Software Developer"
+    customer "Google"
+    description "Web development"
+    start_date 10.days.ago
+    end_date 1.day.ago
+  end
+
   factory :user do
     name     "John Doe"
     email    "john.doe@example.com"
