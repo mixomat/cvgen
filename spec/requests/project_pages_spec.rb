@@ -4,7 +4,7 @@ describe "Projects" do
 
   subject { page }
 
-  let(:user) { FactoryGirl.create(:user) }
+  let(:user) { create(:user) }
   before { sign_in user }
 
   describe "list" do
@@ -19,8 +19,8 @@ describe "Projects" do
   end
 
   describe "create" do
-    let(:java) { FactoryGirl.create(:technology) }
-    let(:ruby) { FactoryGirl.create(:technology, name: "Ruby") }
+    let(:java) { create(:technology) }
+    let(:ruby) { create(:technology, name: "Ruby") }
 
     before { visit new_project_path }
 

@@ -16,10 +16,7 @@ require 'spec_helper'
 
 describe Project do
 
-  let(:java) { FactoryGirl.create(:technology) }
-  before { @project = Project.new(title: "Web Development", role: "Software Developer", customer: "Google",
-                                  description: "Web development", technologies: [java],
-                                  start_date: 10.days.ago, end_date: 1.day.ago) }
+  before { @project = create(:project, technologies: [create(:technology)]) }
   subject { @project }
 
   it { should respond_to :title }

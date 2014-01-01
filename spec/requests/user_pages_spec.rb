@@ -4,7 +4,7 @@ describe "Users" do
   subject { page }
 
   describe "profile page" do
-    let(:user) { FactoryGirl.create(:user) }
+    let(:user) { create(:user) }
     before { visit user_path(user) }
 
     it { should have_selector("h2", :text => user.name) }

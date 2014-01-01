@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "Technology" do
 
   subject { page }
-  let(:user) { FactoryGirl.create(:user) }
+  let(:user) { create(:user) }
   before do
     sign_in user
     visit technologies_path

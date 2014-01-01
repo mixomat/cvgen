@@ -25,7 +25,7 @@ describe "Authentication" do
     end
 
     describe "with valid information" do
-      let(:user) { FactoryGirl.create(:user) }
+      let(:user) { create(:user) }
       before do
         fill_in "Email", with: user.email
         fill_in "Password", with: user.password
@@ -46,7 +46,7 @@ describe "Authentication" do
 
   describe "Authorization" do
     describe "for non-signed-in users" do
-      let(:user) { FactoryGirl.create(:user) }
+      let(:user) { create(:user) }
 
       describe "in the Projects controller" do
 

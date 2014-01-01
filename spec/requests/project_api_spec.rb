@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe "Projects API" do
-  before(:each) { @project = FactoryGirl.create(:project, technologies: [FactoryGirl.create(:technology)]) }
+  before(:each) { @project = create(:project, technologies: [create(:technology)]) }
 
   it 'sends a list of projects' do
     get '/api/projects'
