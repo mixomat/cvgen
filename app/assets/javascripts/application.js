@@ -6,6 +6,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-migrate
 //= require jquery-chosen
 //= require bootstrap-dropdown
 //= require bootstrap-typeahead
