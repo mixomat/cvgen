@@ -6,7 +6,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'bcrypt-ruby', '3.0.1'
-gem 'simple_form'
+gem 'simple_form', '~> 3.0.1'
 gem 'json'
 gem 'sdoc', group: :doc, require: false
 
