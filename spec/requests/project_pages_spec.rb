@@ -34,12 +34,12 @@ describe "Projects" do
 
     describe "with almost valid information" do
       before do
-        fill_in "Title", :with => "Project Title"
-        fill_in "Description", :with => "lorem ipsum"
-        fill_in "Role", :with => "Software Engineer"
-        fill_in "Customer", :with => "Allianz AG"
-        select Date.today.year.to_s, :from => "Start date"
-        select Date.today.year.to_s, :from => "End date"
+        fill_in 'Title', :with => 'Project Title'
+        fill_in 'Description', :with => 'lorem ipsum'
+        fill_in 'Role', :with => 'Software Engineer'
+        fill_in 'Customer', :with => 'Allianz AG'
+        select Date.today.year.to_s, :from => 'project_start_date_1i'
+        select Date.today.year.to_s, :from => 'project_end_date_1i'
       end
 
       it "should not create a new project" do
