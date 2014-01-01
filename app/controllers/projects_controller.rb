@@ -32,7 +32,7 @@ class ProjectsController < ApplicationController
 
   def update
     @project = Project.find(params[:id])
-    flash[:notice] = 'Project was successfully updated.' if @project.update_attributes(project_params)
+    flash[:notice] = 'Project was successfully updated.' if @project.update(project_params)
 
     respond_with @project, :location => projects_path
   end
@@ -46,7 +46,7 @@ class ProjectsController < ApplicationController
 
   private
   def project_params
-    params.require(:project).permit(:title, :description, :customer, :role, :start_date, :end_date)
+    params.require(:project).permit(:title, :description, :customer, :role, :start_date, :end_date, technology_ids: [] )
   end
 
 end

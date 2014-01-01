@@ -10,7 +10,7 @@ class TechnologiesController < ApplicationController
   end
 
   def create
-    @technology = Technology.new(params[:technology])
+    @technology = Technology.new(technology_params)
     flash[:notice] = 'Technology was successfully created.' if @technology.save
 
     respond_with @technology, :location => technologies_url
@@ -24,8 +24,15 @@ class TechnologiesController < ApplicationController
   end
 
   def names
-    @technologies = Technology.select(:name).map { |t| t.name}
+    @technologies = Technology.select(:name).map { |t| t.name }
 
     respond_with @technologies
   end
+
+  private
+
+  def technology_params
+    params.require(:technology).permit(:name)
+  end
+
 end

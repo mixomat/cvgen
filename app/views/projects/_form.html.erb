@@ -16,7 +16,7 @@
     <%= f.input :role, :input_html => {:class => "input-xlarge"} %>
     <%= f.input :description, :input_html => {:class => "input-xxlarge", :rows => 8} %>
 
-    <%= f.association :technologies, :input_html => {:class => "input-xlarge", :data => {:placeholder => "Add some technologies"}} %>
+    <%= f.association :technologies, include_blank: false, :input_html => {:class => "input-xlarge", :data => {:placeholder => "Add some technologies"}} %>
 
     <div class="button-row">
       <%= f.button :submit, :class => 'btn' %>
