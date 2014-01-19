@@ -10,6 +10,7 @@ FactoryGirl.define do
     description "Web development"
     start_date 10.days.ago
     end_date 1.day.ago
+    highlight false
   end
 
   factory :user do

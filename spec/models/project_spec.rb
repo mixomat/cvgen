@@ -26,6 +26,7 @@ describe Project do
   it { should respond_to :technologies }
   it { should respond_to :start_date }
   it { should respond_to :end_date }
+  it { should respond_to :highlight }
   it { should be_valid }
 
 end

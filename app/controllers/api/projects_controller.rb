@@ -3,7 +3,12 @@ module Api
     before_filter :allow_cross_domain_access
 
     def index
-      @projects = Project.all
+      if params[:highlight]
+        @projects = Project.where(highlight: params[:highlight] == 'true')
+      else
+        @projects = Project.all
+      end
+
       # TODO use jbuilder template for fine grained json output
       render json: @projects
     end

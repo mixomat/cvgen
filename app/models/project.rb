@@ -15,7 +15,7 @@
 
 class Project < ActiveRecord::Base
   validates :title, :description, :customer, :role, :technologies, :start_date, :end_date, :presence => true
-  
+
   has_and_belongs_to_many :technologies
   accepts_nested_attributes_for :technologies
 end
